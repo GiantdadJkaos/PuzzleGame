@@ -1,0 +1,137 @@
+[gd_scene load_steps=10 format=3 uid="uid://cntb1o1x3uv4u"]
+
+[ext_resource type="Script" uid="uid://d3yceygkltq2v" path="res://Scenes/lvl10.gd" id="1_evbm4"]
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="2_apjbe"]
+[ext_resource type="PackedScene" uid="uid://samwofp7m11x" path="res://Scenes/Enemies/RollerLR.tscn" id="3_thgc0"]
+[ext_resource type="PackedScene" uid="uid://dppe2yf1xjv6v" path="res://Scenes/Door.tscn" id="4_muvgg"]
+[ext_resource type="PackedScene" uid="uid://chh7jo4bkgtac" path="res://Scenes/Button.tscn" id="5_y8lk2"]
+[ext_resource type="PackedScene" uid="uid://dl4tidd1abphr" path="res://Scenes/trophy.tscn" id="8_vduxo"]
+[ext_resource type="PackedScene" uid="uid://clj6o3gcieija" path="res://Scenes/Wizard.tscn" id="9_5d5pm"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lktjx"]
+texture = ExtResource("2_apjbe")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j5r8j"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_lktjx")
+
+[node name="World" type="Node"]
+script = ExtResource("1_evbm4")
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_j5r8j")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 65538, 0, 0, 65537, 0, 0, 65536, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, -65534, 65536, 0, -65535, 65536, 0, -65536, 65536, 0, -1, 65536, 0, 65535, 65536, 0, 131071, 65536, 0, 196607, 65536, 0, 262143, 65536, 0, 196609, 0, 0, 196610, 0, 0, 327679, 65536, 0, 262144, 65536, 0, 262145, 65536, 0, 262146, 65536, 0, 262147, 65536, 0, -65530, 65536, 0, -65529, 65536, 0, -65528, 65536, 0, 8, 65536, 0, 65544, 65536, 0, 131080, 65536, 0, 196616, 65536, 0, 262152, 65536, 0, 262151, 65536, 0, 262150, 65536, 0, 262149, 65536, 0, 7, 0, 0, 131077, 0, 0, 65541, 0, 0, 196613, 0, 0, 196614, 0, 0, 131078, 0, 0, 131079, 0, 0, 65542, 0, 0, 6, 0, 0, 65543, 0, 0, 196615, 0, 0, -65533, 65536, 0, -65532, 65536, 0, -65531, 65536, 0, 262148, 65536, 0, 458751, 65536, 0, 524287, 65536, 0, 589823, 65536, 0, 655359, 65536, 0, 589832, 65536, 0, 524296, 65536, 0, 458760, 65536, 0, 393224, 65536, 0, 393223, 65536, 0, 393222, 65536, 0, 393221, 65536, 0, 393220, 65536, 0, 393219, 65536, 0, 393218, 65536, 0, 393217, 65536, 0, 393216, 65536, 0, 720895, 65536, 0, 786431, 65536, 0, 720896, 65536, 0, 720897, 65536, 0, 720898, 65536, 0, 720899, 65536, 0, 720900, 65536, 0, 720902, 65536, 0, 720903, 65536, 0, 720904, 65536, 0, 655368, 65536, 0, 720901, 65536, 0, 458752, 0, 0, 524288, 0, 0, 589824, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 589830, 0, 0, 589831, 0, 0, 524295, 0, 0, 458759, 0, 0, 458758, 0, 0, 458757, 0, 0, 458756, 0, 0, 458755, 0, 0, 458754, 0, 0, 458753, 0, 0, 589825, 0, 0, 524289, 0, 0, 524290, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 524292, 0, 0, 524293, 0, 0, 524294, 0, 0, 589829, 0, 0, 524291, 0, 0, 655367, 0, 0, 327680, 65536, 1, 327687, 0, 1, 196612, 0, 0, 131076, 0, 0, 65540, 0, 0, 4, 0, 0, 5, 0, 0, 196608, 0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(112, 176)
+offset = Vector2(2.37, 0)
+zoom = Vector2(1.44, 1.44)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("4_muvgg")]
+position = Vector2(112, 111)
+
+[node name="Button" parent="Doors/Door" instance=ExtResource("5_y8lk2")]
+position = Vector2(128, 225)
+collision_layer = 3
+
+[node name="Door2" parent="Doors" instance=ExtResource("4_muvgg")]
+position = Vector2(112, 16)
+
+[node name="Button" parent="Doors/Door2" instance=ExtResource("5_y8lk2")]
+position = Vector2(128, 320)
+collision_layer = 3
+
+[node name="Door3" parent="Doors" instance=ExtResource("4_muvgg")]
+position = Vector2(112, 48)
+
+[node name="Button" parent="Doors/Door3" instance=ExtResource("5_y8lk2")]
+position = Vector2(128, 288)
+collision_layer = 3
+
+[node name="Door4" parent="Doors" instance=ExtResource("4_muvgg")]
+position = Vector2(112, 80)
+
+[node name="Button" parent="Doors/Door4" instance=ExtResource("5_y8lk2")]
+position = Vector2(128, 256)
+collision_layer = 3
+
+[node name="Door5" parent="Doors" instance=ExtResource("4_muvgg")]
+position = Vector2(112, 335)
+
+[node name="Button" parent="Doors/Door5" instance=ExtResource("5_y8lk2")]
+position = Vector2(-96, -224)
+collision_layer = 3
+
+[node name="Door6" parent="Doors" instance=ExtResource("4_muvgg")]
+position = Vector2(112, 240)
+
+[node name="Button" parent="Doors/Door6" instance=ExtResource("5_y8lk2")]
+position = Vector2(-96, -128)
+collision_layer = 3
+
+[node name="Door7" parent="Doors" instance=ExtResource("4_muvgg")]
+position = Vector2(112, 272)
+
+[node name="Button" parent="Doors/Door7" instance=ExtResource("5_y8lk2")]
+position = Vector2(-96, -160)
+collision_layer = 3
+
+[node name="Door8" parent="Doors" instance=ExtResource("4_muvgg")]
+position = Vector2(112, 304)
+
+[node name="Button" parent="Doors/Door8" instance=ExtResource("5_y8lk2")]
+position = Vector2(-96, -192)
+collision_layer = 3
+
+[node name="Trophy" parent="." instance=ExtResource("8_vduxo")]
+position = Vector2(240, 16)
+
+[node name="RollerLR" parent="." instance=ExtResource("3_thgc0")]
+position = Vector2(16, 336)
+
+[node name="Wizard" parent="." instance=ExtResource("9_5d5pm")]
+position = Vector2(16, 17)
+
+[connection signal="ButtonOn" from="Doors/Door/Button" to="Doors/Door" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door2/Button" to="Doors/Door2" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door3/Button" to="Doors/Door3" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door4/Button" to="Doors/Door4" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door5/Button" to="Doors/Door5" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door6/Button" to="Doors/Door6" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door7/Button" to="Doors/Door7" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door8/Button" to="Doors/Door8" method="_on_button_button_on"]
+[connection signal="hurt" from="Wizard" to="." method="_on_wizard_hurt"]
+[connection signal="win" from="Wizard" to="." method="_on_wizard_win"]

@@ -1,0 +1,117 @@
+[gd_scene load_steps=14 format=3 uid="uid://bpbey6g52fb6"]
+
+[ext_resource type="Script" uid="uid://degr1qxb6pxt" path="res://Scenes/Enemies/RollerUD.gd" id="1_4386g"]
+[ext_resource type="Texture2D" uid="uid://cyhthbgv28xya" path="res://Sprites/Cart-Sheet.png" id="2_o3kf3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23ug8"]
+atlas = ExtResource("2_o3kf3")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmina"]
+atlas = ExtResource("2_o3kf3")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2osko"]
+atlas = ExtResource("2_o3kf3")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4jbl"]
+atlas = ExtResource("2_o3kf3")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n1h0s"]
+atlas = ExtResource("2_o3kf3")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idmtb"]
+atlas = ExtResource("2_o3kf3")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht167"]
+atlas = ExtResource("2_o3kf3")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8higd"]
+atlas = ExtResource("2_o3kf3")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6754q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23ug8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmina")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2osko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4jbl")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n1h0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idmtb")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ht167")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8higd")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjuyq"]
+size = Vector2(22, 22)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_te25t"]
+radius = 8.0
+
+[node name="RollerUD" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 33
+script = ExtResource("1_4386g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_6754q")
+animation = &"up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yjuyq")
+
+[node name="Body" type="Area2D" parent="."]
+collision_layer = 36
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_te25t")
+
+[node name="WallHit" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[connection signal="timeout" from="WallHit" to="." method="_on_timer_timeout"]

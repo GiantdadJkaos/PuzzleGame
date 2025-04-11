@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://xn7id8drjl8i"]
+
+[ext_resource type="Script" uid="uid://2vexmy4tepkt" path="res://ReverseDangerFloor.gd" id="1_yhqis"]
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="2_3ovhi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sgjc"]
+atlas = ExtResource("2_3ovhi")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o17jt"]
+atlas = ExtResource("2_3ovhi")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvmpd"]
+size = Vector2(24, 24)
+
+[node name="DangerFloorR" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+monitoring = false
+monitorable = false
+script = ExtResource("1_yhqis")
+
+[node name="FloorOn" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = SubResource("AtlasTexture_3sgjc")
+
+[node name="FloorOff" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_o17jt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jvmpd")
+
+[node name="Lava" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lava"]
+shape = SubResource("RectangleShape2D_jvmpd")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="area_entered" from="Lava" to="." method="_on_lava_area_entered"]

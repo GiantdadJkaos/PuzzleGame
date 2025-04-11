@@ -1,0 +1,203 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmqv2dimyc52k"]
+
+[sub_resource type="Gradient" id="Gradient_vii72"]
+colors = PackedColorArray(1.8771e-06, 0, 0.579079, 1, 0.542217, 0.383046, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yk7em"]
+gradient = SubResource("Gradient_vii72")
+width = 300
+
+[node name="World1" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-05, 40)
+scale = Vector2(1152, 720)
+texture = SubResource("GradientTexture1D_yk7em")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="lvl1" type="Button" parent="."]
+offset_left = -496.0
+offset_top = -296.0
+offset_right = -272.0
+offset_bottom = -184.0
+action_mode = 0
+text = "Level 1"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl2" type="Button" parent="."]
+offset_left = -240.0
+offset_top = -296.0
+offset_right = -16.0
+offset_bottom = -184.0
+disabled = true
+action_mode = 0
+text = "Level 2"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl3" type="Button" parent="."]
+offset_left = 16.0
+offset_top = -296.0
+offset_right = 240.0
+offset_bottom = -184.0
+disabled = true
+action_mode = 0
+text = "Level 3"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl4" type="Button" parent="."]
+offset_left = 272.0
+offset_top = -296.0
+offset_right = 496.0
+offset_bottom = -184.0
+disabled = true
+action_mode = 0
+text = "Level 4"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl5" type="Button" parent="."]
+offset_left = -496.0
+offset_top = -152.0
+offset_right = -272.0
+offset_bottom = -40.0
+disabled = true
+action_mode = 0
+text = "Level 5"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl6" type="Button" parent="."]
+offset_left = -240.0
+offset_top = -152.0
+offset_right = -16.0
+offset_bottom = -40.0
+disabled = true
+action_mode = 0
+text = "Level 6"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl7" type="Button" parent="."]
+offset_left = 16.0
+offset_top = -152.0
+offset_right = 240.0
+offset_bottom = -40.0
+disabled = true
+action_mode = 0
+text = "Level 7"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl8" type="Button" parent="."]
+offset_left = 272.0
+offset_top = -152.0
+offset_right = 496.0
+offset_bottom = -40.0
+disabled = true
+action_mode = 0
+text = "Level 8"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl9" type="Button" parent="."]
+offset_left = -496.0
+offset_top = -8.0
+offset_right = -272.0
+offset_bottom = 104.0
+disabled = true
+action_mode = 0
+text = "Level 9"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl10" type="Button" parent="."]
+offset_left = -240.0
+offset_top = -8.0
+offset_right = -16.0
+offset_bottom = 104.0
+disabled = true
+action_mode = 0
+text = "Level 10"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl11" type="Button" parent="."]
+offset_left = 16.0
+offset_top = -8.0
+offset_right = 240.0
+offset_bottom = 104.0
+disabled = true
+action_mode = 0
+text = "Level 11"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl12" type="Button" parent="."]
+offset_left = 272.0
+offset_top = -8.0
+offset_right = 496.0
+offset_bottom = 104.0
+disabled = true
+action_mode = 0
+text = "Level 12"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl13" type="Button" parent="."]
+offset_left = -496.0
+offset_top = 136.0
+offset_right = -272.0
+offset_bottom = 248.0
+disabled = true
+action_mode = 0
+text = "Level 13"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl17" type="Button" parent="."]
+offset_left = -496.0
+offset_top = 264.0
+offset_right = -272.0
+offset_bottom = 376.0
+action_mode = 0
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl14" type="Button" parent="."]
+offset_left = -240.0
+offset_top = 136.0
+offset_right = -16.0
+offset_bottom = 248.0
+disabled = true
+action_mode = 0
+text = "Level 14"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl15" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 136.0
+offset_right = 240.0
+offset_bottom = 248.0
+disabled = true
+action_mode = 0
+text = "Level 15"
+metadata/_edit_use_anchors_ = true
+
+[node name="lvl16" type="Button" parent="."]
+offset_left = 272.0
+offset_top = 136.0
+offset_right = 496.0
+offset_bottom = 248.0
+disabled = true
+action_mode = 0
+text = "Level 16"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="lvl3" to="." method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="lvl4" to="." method="_on_lvl_4_pressed"]
+[connection signal="pressed" from="lvl5" to="." method="_on_lvl_5_pressed"]
+[connection signal="pressed" from="lvl6" to="." method="_on_lvl_6_pressed"]
+[connection signal="pressed" from="lvl7" to="." method="_on_lvl_7_pressed"]
+[connection signal="pressed" from="lvl8" to="." method="_on_lvl_8_pressed"]
+[connection signal="pressed" from="lvl9" to="." method="_on_lvl_9_pressed"]
+[connection signal="pressed" from="lvl10" to="." method="_on_lvl_10_pressed"]
+[connection signal="pressed" from="lvl11" to="." method="_on_lvl_11_pressed"]
+[connection signal="pressed" from="lvl12" to="." method="_on_lvl_12_pressed"]
+[connection signal="pressed" from="lvl13" to="." method="_on_lvl_13_pressed"]
+[connection signal="pressed" from="lvl17" to="." method="_on_lvl_17_pressed"]
+[connection signal="pressed" from="lvl14" to="." method="_on_lvl_14_pressed"]
+[connection signal="pressed" from="lvl15" to="." method="_on_lvl_15_pressed"]
+[connection signal="pressed" from="lvl16" to="." method="_on_lvl_16_pressed"]

@@ -1,0 +1,140 @@
+[gd_scene load_steps=19 format=3 uid="uid://cct5xqxehvawa"]
+
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="1_8x0tv"]
+[ext_resource type="Script" uid="uid://duo5lhbqde6n0" path="res://Scenes/Reference.gd" id="1_eq72p"]
+[ext_resource type="PackedScene" uid="uid://dppe2yf1xjv6v" path="res://Scenes/Door.tscn" id="2_daan5"]
+[ext_resource type="PackedScene" uid="uid://chh7jo4bkgtac" path="res://Scenes/Button.tscn" id="3_hx3i5"]
+[ext_resource type="PackedScene" uid="uid://dl4tidd1abphr" path="res://Scenes/trophy.tscn" id="4_kb7ja"]
+[ext_resource type="PackedScene" uid="uid://dggck1sxhr0n4" path="res://Scenes/lava.tscn" id="5_dfkfl"]
+[ext_resource type="PackedScene" uid="uid://b06mhpg32cuor" path="res://Scenes/Teleporter.tscn" id="6_hwego"]
+[ext_resource type="PackedScene" uid="uid://e13feykjyrhl" path="res://Scenes/Exit.tscn" id="7_fmfdb"]
+[ext_resource type="PackedScene" uid="uid://bh6hosluc8ekq" path="res://Scenes/reverse_door.tscn" id="8_67v7h"]
+[ext_resource type="PackedScene" uid="uid://nj255hsv5jvn" path="res://Scenes/DangerFloor.tscn" id="9_d43pg"]
+[ext_resource type="PackedScene" uid="uid://clj6o3gcieija" path="res://Scenes/Wizard.tscn" id="9_iil8g"]
+[ext_resource type="Script" uid="uid://dkttctf0edfhh" path="res://Scenes/ButtonOF.gd" id="11_bb2ee"]
+[ext_resource type="PackedScene" uid="uid://xn7id8drjl8i" path="res://Scenes/DangerFloorR.tscn" id="12_b3a6w"]
+[ext_resource type="PackedScene" uid="uid://samwofp7m11x" path="res://Scenes/Enemies/RollerLR.tscn" id="14_2bjm2"]
+[ext_resource type="PackedScene" uid="uid://beewskdsrvjna" path="res://Scenes/Danger.tscn" id="15_3r8ps"]
+[ext_resource type="PackedScene" uid="uid://bpbey6g52fb6" path="res://Scenes/Enemies/RollerUD.tscn" id="15_8akpb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lktjx"]
+texture = ExtResource("1_8x0tv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+12:7/0 = 0
+13:7/0 = 0
+14:7/0 = 0
+15:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_bgvcn"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_lktjx")
+
+[node name="Node" type="Node"]
+script = ExtResource("1_eq72p")
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_bgvcn")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65534, 65536, 0, -65535, 65536, 0, -65536, 65536, 0, -1, 65536, 0, 65535, 65536, 0, -65533, 65536, 0, 262143, 65536, 0, -65532, 65536, 0, -65531, 65536, 0, -65530, 65536, 0, -65529, 65536, 0, -65528, 65536, 0, 8, 0, 0, 262152, 0, 0, 7, 0, 0, 5, 0, 0, 6, 0, 0, 0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 327688, 0, 0, 196616, 0, 0, 131080, 0, 0, 65544, 0, 0, 65543, 0, 0, 65542, 0, 0, 65541, 0, 0, 65540, 0, 0, 65539, 0, 0, 65538, 0, 0, 65537, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 131074, 0, 0, 131073, 0, 0, 196609, 0, 0, 196610, 0, 0, 262146, 0, 0, 327682, 0, 0, 327681, 0, 0, 262145, 0, 0, 196611, 0, 0, 196612, 0, 0, 262148, 0, 0, 262147, 0, 0, 131075, 0, 0, 131076, 0, 0, 327684, 0, 0, 327683, 0, 0, 262149, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 262150, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 327686, 0, 0, 327685, 0, 0, 262151, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 393227, 0, 0, 393226, 0, 0, 393225, 0, 0, 327689, 0, 0, 327690, 0, 0, 262154, 0, 0, 196617, 0, 0, 65545, 0, 0, 65546, 0, 0, 131081, 0, 0, 196618, 0, 0, 131082, 0, 0, 262153, 0, 0, 131071, 65536, 0, 196607, 65536, 0, 327679, 65536, 0, 393215, 65536, 0, 458751, 65536, 0, 524287, 65536, 0, 458752, 65536, 0, 458753, 65536, 0, 458754, 65536, 0, 458755, 65536, 0, 458756, 65536, 0, 458757, 65536, 0, 458758, 65536, 0, 458759, 65536, 0, 458760, 65536, 0, 458761, 65536, 0, 458762, 65536, 0, 458763, 65536, 0, 458764, 65536, 0, -65524, 65536, 0, -65525, 65536, 0, -65526, 65536, 0, -65527, 65536, 0, 393228, 0, 0, 327692, 0, 0, 262156, 0, 0, 196620, 0, 0, 131084, 0, 0, 65548, 0, 0, 12, 0, 0, 458765, 65536, 0, 393229, 65536, 0, 327693, 65536, 0, 262157, 65536, 0, 196621, 65536, 0, 131085, 65536, 0, 65549, 65536, 0, 13, 65536, 0, -65523, 65536, 0)
+
+[node name="Door" parent="." instance=ExtResource("2_daan5")]
+position = Vector2(112, 176)
+
+[node name="Button" parent="Door" instance=ExtResource("3_hx3i5")]
+position = Vector2(0, -64)
+collision_layer = 3
+
+[node name="Trophy" parent="." instance=ExtResource("4_kb7ja")]
+position = Vector2(48, 176)
+
+[node name="Lava" parent="." instance=ExtResource("5_dfkfl")]
+position = Vector2(240, 176)
+
+[node name="TeleportEnter" parent="." instance=ExtResource("6_hwego")]
+position = Vector2(304, 111)
+
+[node name="TeleportExit" parent="TeleportEnter" instance=ExtResource("7_fmfdb")]
+position = Vector2(1, 65)
+
+[node name="ReverseDoor" parent="." instance=ExtResource("8_67v7h")]
+position = Vector2(176, 176)
+
+[node name="Button" parent="ReverseDoor" instance=ExtResource("3_hx3i5")]
+position = Vector2(2.52521, -62.1017)
+
+[node name="Button" parent="." instance=ExtResource("3_hx3i5")]
+position = Vector2(368, 111)
+script = ExtResource("11_bb2ee")
+
+[node name="DangerFloor" parent="Button" instance=ExtResource("9_d43pg")]
+position = Vector2(0, 65)
+
+[node name="DangerFloorR" parent="Button" instance=ExtResource("12_b3a6w")]
+position = Vector2(32, 65)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(192, 111)
+zoom = Vector2(2.19, 2.19)
+
+[node name="RollerLR" parent="." instance=ExtResource("14_2bjm2")]
+position = Vector2(80, 80)
+
+[node name="RollerUD" parent="." instance=ExtResource("15_8akpb")]
+position = Vector2(48, 80)
+
+[node name="Lava2" parent="." instance=ExtResource("15_3r8ps")]
+position = Vector2(48, 48)
+
+[node name="Wizard" parent="." instance=ExtResource("9_iil8g")]
+position = Vector2(176, 48)
+platform_floor_layers = 4294967040
+
+[connection signal="ButtonOff" from="Door/Button" to="Door" method="_on_button_button_off"]
+[connection signal="ButtonOn" from="Door/Button" to="Door" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Door/Button" to="ReverseDoor/Button" method="_on_button_button_on"]
+[connection signal="ButtonOff" from="ReverseDoor/Button" to="ReverseDoor" method="_on_button_button_off"]
+[connection signal="ButtonOn" from="ReverseDoor/Button" to="Door/Button" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="ReverseDoor/Button" to="ReverseDoor" method="_on_button_button_on"]
+[connection signal="ButtonOff" from="Button" to="Button/DangerFloor" method="_on_button_button_off"]
+[connection signal="ButtonOff" from="Button" to="Button/DangerFloorR" method="_on_button_button_off"]
+[connection signal="ButtonOn" from="Button" to="Button/DangerFloor" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Button" to="Button/DangerFloorR" method="_on_button_button_on"]
+[connection signal="hurt" from="Wizard" to="." method="_on_wizard_hurt"]
+[connection signal="win" from="Wizard" to="." method="_on_wizard_win"]

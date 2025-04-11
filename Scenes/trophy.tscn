@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://dl4tidd1abphr"]
+
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="2_a55e8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8b6c"]
+atlas = ExtResource("2_a55e8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thh23"]
+size = Vector2(32, 32)
+
+[node name="Trophy" type="Area2D"]
+collision_layer = 64
+collision_mask = 0
+monitoring = false
+
+[node name="TrophyIcon" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_y8b6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_thh23")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

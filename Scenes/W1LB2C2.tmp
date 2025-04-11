@@ -1,0 +1,171 @@
+[gd_scene load_steps=4 format=3 uid="uid://d20n4m334gpr0"]
+
+[ext_resource type="Script" path="res://Scenes/W1LevelSelect.gd" id="1_uep1q"]
+
+[sub_resource type="Gradient" id="Gradient_02srk"]
+colors = PackedColorArray(1.8771e-06, 0, 0.579079, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_yk7em"]
+gradient = SubResource("Gradient_02srk")
+
+[node name="World1" type="Node"]
+script = ExtResource("1_uep1q")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-05, -1.52588e-05)
+scale = Vector2(1152, 640)
+texture = SubResource("GradientTexture1D_yk7em")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="lvl1" type="Button" parent="."]
+offset_left = -512.0
+offset_top = -256.0
+offset_right = -288.0
+offset_bottom = -144.0
+action_mode = 0
+text = "Level 1"
+
+[node name="lvl2" type="Button" parent="."]
+offset_left = -256.0
+offset_top = -256.0
+offset_right = -32.0
+offset_bottom = -144.0
+disabled = true
+action_mode = 0
+text = "Level 2"
+
+[node name="lvl3" type="Button" parent="."]
+offset_top = -256.0
+offset_right = 224.0
+offset_bottom = -144.0
+disabled = true
+action_mode = 0
+text = "Level 3"
+
+[node name="lvl4" type="Button" parent="."]
+offset_left = 256.0
+offset_top = -256.0
+offset_right = 480.0
+offset_bottom = -144.0
+disabled = true
+action_mode = 0
+text = "Level 4"
+
+[node name="lvl5" type="Button" parent="."]
+offset_left = -512.0
+offset_top = -112.0
+offset_right = -288.0
+disabled = true
+action_mode = 0
+text = "Level 5"
+
+[node name="lvl6" type="Button" parent="."]
+offset_left = -256.0
+offset_top = -112.0
+offset_right = -32.0
+disabled = true
+action_mode = 0
+text = "Level 6"
+
+[node name="lvl7" type="Button" parent="."]
+offset_top = -112.0
+offset_right = 224.0
+disabled = true
+action_mode = 0
+text = "Level 7"
+
+[node name="lvl8" type="Button" parent="."]
+offset_left = 256.0
+offset_top = -112.0
+offset_right = 480.0
+disabled = true
+action_mode = 0
+text = "Level 8"
+
+[node name="lvl9" type="Button" parent="."]
+offset_left = -512.0
+offset_top = 32.0
+offset_right = -288.0
+offset_bottom = 144.0
+disabled = true
+action_mode = 0
+text = "Level 9"
+
+[node name="lvl10" type="Button" parent="."]
+offset_left = -256.0
+offset_top = 32.0
+offset_right = -32.0
+offset_bottom = 144.0
+disabled = true
+action_mode = 0
+text = "Level 10"
+
+[node name="lvl11" type="Button" parent="."]
+offset_top = 32.0
+offset_right = 224.0
+offset_bottom = 144.0
+disabled = true
+action_mode = 0
+text = "Level 11"
+
+[node name="lvl12" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 32.0
+offset_right = 480.0
+offset_bottom = 144.0
+disabled = true
+action_mode = 0
+text = "Level 12"
+
+[node name="lvl13" type="Button" parent="."]
+offset_left = -512.0
+offset_top = 176.0
+offset_right = -288.0
+offset_bottom = 288.0
+disabled = true
+action_mode = 0
+text = "Level 13"
+
+[node name="lvl14" type="Button" parent="."]
+offset_left = -256.0
+offset_top = 176.0
+offset_right = -32.0
+offset_bottom = 288.0
+disabled = true
+action_mode = 0
+text = "Level 14"
+
+[node name="lvl15" type="Button" parent="."]
+offset_top = 176.0
+offset_right = 224.0
+offset_bottom = 288.0
+disabled = true
+action_mode = 0
+text = "Level 15"
+
+[node name="lvl16" type="Button" parent="."]
+offset_left = 256.0
+offset_top = 176.0
+offset_right = 480.0
+offset_bottom = 288.0
+disabled = true
+action_mode = 0
+text = "Level 16"
+
+[connection signal="pressed" from="lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="lvl3" to="." method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="lvl4" to="." method="_on_lvl_4_pressed"]
+[connection signal="pressed" from="lvl5" to="." method="_on_lvl_5_pressed"]
+[connection signal="pressed" from="lvl6" to="." method="_on_lvl_6_pressed"]
+[connection signal="pressed" from="lvl7" to="." method="_on_lvl_7_pressed"]
+[connection signal="pressed" from="lvl8" to="." method="_on_lvl_8_pressed"]
+[connection signal="pressed" from="lvl9" to="." method="_on_lvl_9_pressed"]
+[connection signal="pressed" from="lvl10" to="." method="_on_lvl_10_pressed"]
+[connection signal="pressed" from="lvl11" to="." method="_on_lvl_11_pressed"]
+[connection signal="pressed" from="lvl12" to="." method="_on_lvl_12_pressed"]
+[connection signal="pressed" from="lvl13" to="." method="_on_lvl_13_pressed"]
+[connection signal="pressed" from="lvl14" to="." method="_on_lvl_14_pressed"]
+[connection signal="pressed" from="lvl15" to="." method="_on_lvl_15_pressed"]
+[connection signal="pressed" from="lvl16" to="." method="_on_lvl_16_pressed"]

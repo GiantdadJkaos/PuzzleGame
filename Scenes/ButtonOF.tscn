@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bqnrk35cujoto"]
+
+[ext_resource type="Script" uid="uid://dkttctf0edfhh" path="res://Scenes/ButtonOF.gd" id="1_u0au0"]
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="2_etht0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k1vh"]
+atlas = ExtResource("2_etht0")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccnyp"]
+atlas = ExtResource("2_etht0")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1p1tf"]
+size = Vector2(28, 28)
+
+[node name="ButtonOF" type="Area2D"]
+collision_layer = 0
+collision_mask = 50
+monitorable = false
+script = ExtResource("1_u0au0")
+
+[node name="ButtonOff" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_5k1vh")
+
+[node name="ButtonOn" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = SubResource("AtlasTexture_ccnyp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_1p1tf")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

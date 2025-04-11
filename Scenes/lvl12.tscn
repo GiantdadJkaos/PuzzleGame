@@ -1,0 +1,200 @@
+[gd_scene load_steps=12 format=3 uid="uid://c557x2pmye2l"]
+
+[ext_resource type="Script" uid="uid://d0ttfsjbt5h0i" path="res://Scenes/lvl12.gd" id="1_r3fli"]
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="2_4tq6p"]
+[ext_resource type="PackedScene" uid="uid://dppe2yf1xjv6v" path="res://Scenes/Door.tscn" id="3_hlxbq"]
+[ext_resource type="PackedScene" uid="uid://chh7jo4bkgtac" path="res://Scenes/Button.tscn" id="4_y5fr0"]
+[ext_resource type="PackedScene" uid="uid://brvrakms56ye1" path="res://Scenes/ButtonR.tscn" id="5_bk0hj"]
+[ext_resource type="PackedScene" uid="uid://bh6hosluc8ekq" path="res://Scenes/reverse_door.tscn" id="6_6jmo0"]
+[ext_resource type="PackedScene" uid="uid://dl4tidd1abphr" path="res://Scenes/trophy.tscn" id="6_47v48"]
+[ext_resource type="PackedScene" uid="uid://samwofp7m11x" path="res://Scenes/Enemies/RollerLR.tscn" id="7_cw0vv"]
+[ext_resource type="PackedScene" uid="uid://clj6o3gcieija" path="res://Scenes/Wizard.tscn" id="8_1as4u"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lktjx"]
+texture = ExtResource("2_4tq6p")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_psqjq"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_lktjx")
+
+[node name="World" type="Node"]
+script = ExtResource("1_r3fli")
+metadata/_edit_horizontal_guides_ = [120.0]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_psqjq")
+format = 2
+layer_0/tile_data = PackedInt32Array(65534, 65536, 0, 65535, 65536, 0, 0, 65536, 0, 1, 65536, 0, 2, 65536, 0, 3, 65536, 0, 4, 65536, 0, 5, 65536, 0, 6, 65536, 0, 7, 65536, 0, 8, 65536, 0, 65544, 65536, 0, 131080, 65536, 0, 196616, 65536, 0, 262152, 65536, 0, 327688, 65536, 0, 393224, 65536, 0, 458750, 65536, 0, 393214, 65536, 0, 327678, 65536, 0, 262142, 65536, 0, 196606, 65536, 0, 131070, 65536, 0, 458760, 65536, 0, 524296, 65536, 0, 589832, 65536, 0, 655368, 65536, 0, 655367, 65536, 0, 655366, 65536, 0, 655365, 65536, 0, 655364, 65536, 0, 655363, 65536, 0, 655362, 65536, 0, 655361, 65536, 0, 655360, 65536, 0, 720895, 65536, 0, 720894, 65536, 0, 655358, 65536, 0, 589822, 65536, 0, 524286, 65536, 0, 524289, 0, 0, 524288, 0, 0, 458752, 0, 0, 393216, 0, 0, 327680, 0, 0, 262144, 0, 0, 196608, 0, 0, 131072, 0, 0, 65536, 0, 0, 131071, 0, 0, 196607, 0, 0, 262143, 0, 0, 327679, 0, 0, 393215, 0, 0, 458751, 0, 0, 524287, 0, 0, 589823, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 524290, 0, 0, 458754, 0, 0, 393218, 0, 0, 327682, 0, 0, 262146, 0, 0, 196610, 0, 0, 131074, 0, 0, 65538, 0, 0, 65537, 0, 0, 131073, 0, 0, 196609, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 65539, 0, 0, 131075, 0, 0, 196611, 0, 0, 262147, 0, 0, 327683, 0, 0, 393219, 0, 0, 458755, 0, 0, 524291, 0, 0, 589827, 0, 0, 589828, 65536, 0, 524292, 65536, 0, 458756, 65536, 0, 393220, 65536, 0, 327684, 0, 0, 262148, 0, 0, 196612, 0, 0, 131076, 0, 0, 65540, 0, 0, 65541, 0, 0, 131077, 0, 0, 196613, 0, 0, 262149, 0, 0, 327685, 0, 0, 393221, 0, 0, 458757, 0, 0, 524293, 0, 0, 589829, 0, 0, 589830, 0, 0, 524294, 0, 0, 458758, 0, 0, 393222, 0, 0, 327686, 0, 0, 262150, 0, 0, 196614, 0, 0, 131078, 0, 0, 65542, 0, 0, 65543, 0, 0, 131079, 0, 0, 196615, 0, 0, 262151, 0, 0, 327687, 0, 0, 393223, 0, 0, 458759, 0, 0, 524295, 0, 0, 589831, 0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(112, 176)
+offset = Vector2(2.37, 0)
+zoom = Vector2(1.79, 1.79)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door9" parent="Doors" instance=ExtResource("3_hlxbq")]
+position = Vector2(144, 176)
+
+[node name="Button" parent="Doors/Door9" instance=ExtResource("4_y5fr0")]
+position = Vector2(-160, 128)
+collision_layer = 3
+
+[node name="ButtonR" parent="Doors/Door9" instance=ExtResource("5_bk0hj")]
+position = Vector2(-160, -127)
+
+[node name="ReverseDoor5" parent="Doors/Door9" instance=ExtResource("6_6jmo0")]
+position = Vector2(-32, 32)
+
+[node name="Door10" parent="Doors" instance=ExtResource("3_hlxbq")]
+position = Vector2(144, 144)
+
+[node name="Button" parent="Doors/Door10" instance=ExtResource("4_y5fr0")]
+position = Vector2(-160, 160)
+collision_layer = 3
+
+[node name="ButtonR" parent="Doors/Door10" instance=ExtResource("5_bk0hj")]
+position = Vector2(-160, -96)
+
+[node name="ReverseDoor5" parent="Doors/Door10" instance=ExtResource("6_6jmo0")]
+position = Vector2(-64, 64)
+
+[node name="Door11" parent="Doors" instance=ExtResource("3_hlxbq")]
+position = Vector2(144, 112)
+
+[node name="Button" parent="Doors/Door11" instance=ExtResource("4_y5fr0")]
+position = Vector2(-160, 192)
+collision_layer = 3
+
+[node name="ButtonR" parent="Doors/Door11" instance=ExtResource("5_bk0hj")]
+position = Vector2(-160, -64)
+
+[node name="ReverseDoor5" parent="Doors/Door11" instance=ExtResource("6_6jmo0")]
+position = Vector2(-96, 96)
+
+[node name="Door12" parent="Doors" instance=ExtResource("3_hlxbq")]
+position = Vector2(144, 80)
+
+[node name="Button" parent="Doors/Door12" instance=ExtResource("4_y5fr0")]
+position = Vector2(-160, 224)
+collision_layer = 3
+
+[node name="ButtonR" parent="Doors/Door12" instance=ExtResource("5_bk0hj")]
+position = Vector2(-160, -31)
+
+[node name="ReverseDoor5" parent="Doors/Door12" instance=ExtResource("6_6jmo0")]
+position = Vector2(-128, 128)
+
+[node name="Door13" parent="Doors" instance=ExtResource("3_hlxbq")]
+position = Vector2(144, 48)
+
+[node name="Button" parent="Doors/Door13" instance=ExtResource("4_y5fr0")]
+position = Vector2(-160, 256)
+collision_layer = 3
+
+[node name="ButtonR" parent="Doors/Door13" instance=ExtResource("5_bk0hj")]
+position = Vector2(-160, 0)
+
+[node name="ReverseDoor5" parent="Doors/Door13" instance=ExtResource("6_6jmo0")]
+position = Vector2(-160, 160)
+
+[node name="Door5" parent="Doors" instance=ExtResource("3_hlxbq")]
+position = Vector2(210, 208)
+
+[node name="Button" parent="Doors/Door5" instance=ExtResource("4_y5fr0")]
+position = Vector2(-98, 96)
+collision_layer = 3
+
+[node name="Door22" parent="Doors" instance=ExtResource("3_hlxbq")]
+position = Vector2(176, 208)
+
+[node name="Button" parent="Doors/Door22" instance=ExtResource("4_y5fr0")]
+position = Vector2(-64, 96)
+collision_layer = 3
+
+[node name="Door25" parent="Doors" instance=ExtResource("3_hlxbq")]
+position = Vector2(240, 208)
+
+[node name="Button" parent="Doors/Door25" instance=ExtResource("4_y5fr0")]
+position = Vector2(-128, 96)
+collision_layer = 3
+
+[node name="Trophy" parent="." instance=ExtResource("6_47v48")]
+position = Vector2(240, 304)
+
+[node name="Wizard" parent="." instance=ExtResource("8_1as4u")]
+position = Vector2(-16, 48)
+
+[node name="RollerLR" parent="." instance=ExtResource("7_cw0vv")]
+position = Vector2(208, 48)
+
+[connection signal="ButtonOn" from="Doors/Door9/Button" to="Doors/Door9" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door9/Button" to="Doors/Door9/ButtonR" method="_on_button_button_on"]
+[connection signal="ButtonOff" from="Doors/Door9/ButtonR" to="Doors/Door9" method="_on_button_r_button_off"]
+[connection signal="ButtonOff" from="Doors/Door9/ButtonR" to="Doors/Door9/ReverseDoor5" method="_on_button_r_button_off"]
+[connection signal="ButtonOn" from="Doors/Door9/ButtonR" to="Doors/Door9" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door9/ButtonR" to="Doors/Door9/Button" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door9/ButtonR" to="Doors/Door9/ReverseDoor5" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door10/Button" to="Doors/Door10" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door10/Button" to="Doors/Door10/ButtonR" method="_on_button_button_on"]
+[connection signal="ButtonOff" from="Doors/Door10/ButtonR" to="Doors/Door10" method="_on_button_r_button_off"]
+[connection signal="ButtonOff" from="Doors/Door10/ButtonR" to="Doors/Door10/ReverseDoor5" method="_on_button_r_button_off"]
+[connection signal="ButtonOn" from="Doors/Door10/ButtonR" to="Doors/Door10" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door10/ButtonR" to="Doors/Door10/Button" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door10/ButtonR" to="Doors/Door10/ReverseDoor5" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door11/Button" to="Doors/Door11" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door11/Button" to="Doors/Door11/ButtonR" method="_on_button_button_on"]
+[connection signal="ButtonOff" from="Doors/Door11/ButtonR" to="Doors/Door11" method="_on_button_r_button_off"]
+[connection signal="ButtonOff" from="Doors/Door11/ButtonR" to="Doors/Door11/ReverseDoor5" method="_on_button_r_button_off"]
+[connection signal="ButtonOn" from="Doors/Door11/ButtonR" to="Doors/Door11" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door11/ButtonR" to="Doors/Door11/Button" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door11/ButtonR" to="Doors/Door11/ReverseDoor5" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door12/Button" to="Doors/Door12" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door12/Button" to="Doors/Door12/ButtonR" method="_on_button_button_on"]
+[connection signal="ButtonOff" from="Doors/Door12/ButtonR" to="Doors/Door12" method="_on_button_r_button_off"]
+[connection signal="ButtonOff" from="Doors/Door12/ButtonR" to="Doors/Door12/ReverseDoor5" method="_on_button_r_button_off"]
+[connection signal="ButtonOn" from="Doors/Door12/ButtonR" to="Doors/Door12" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door12/ButtonR" to="Doors/Door12/Button" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door12/ButtonR" to="Doors/Door12/ReverseDoor5" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door13/Button" to="Doors/Door13" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door13/Button" to="Doors/Door13/ButtonR" method="_on_button_button_on"]
+[connection signal="ButtonOff" from="Doors/Door13/ButtonR" to="Doors/Door13" method="_on_button_r_button_off"]
+[connection signal="ButtonOff" from="Doors/Door13/ButtonR" to="Doors/Door13/ReverseDoor5" method="_on_button_r_button_off"]
+[connection signal="ButtonOn" from="Doors/Door13/ButtonR" to="Doors/Door13" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door13/ButtonR" to="Doors/Door13/Button" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door13/ButtonR" to="Doors/Door13/ReverseDoor5" method="_on_button_r_button_on"]
+[connection signal="ButtonOn" from="Doors/Door5/Button" to="Doors/Door5" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door22/Button" to="Doors/Door22" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door25/Button" to="Doors/Door25" method="_on_button_button_on"]
+[connection signal="hurt" from="Wizard" to="." method="_on_wizard_hurt"]
+[connection signal="win" from="Wizard" to="." method="_on_wizard_win"]

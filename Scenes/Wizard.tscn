@@ -1,0 +1,156 @@
+[gd_scene load_steps=20 format=3 uid="uid://clj6o3gcieija"]
+
+[ext_resource type="Texture2D" uid="uid://ds4rkkgxluvqp" path="res://Sprites/WizardIdle-Sheet.png" id="1_qowni"]
+[ext_resource type="Script" uid="uid://dc0rkf4atg1ef" path="res://Scenes/Wizard.gd" id="1_ww4dv"]
+[ext_resource type="Texture2D" uid="uid://dihwxley6i4u3" path="res://Sprites/WizardWalk-Sheet.png" id="2_decpc"]
+[ext_resource type="PackedScene" uid="uid://dx4yt0dq6no0a" path="res://Scenes/Spells/fireBall.tscn" id="2_tpg12"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qx8qi"]
+radius = 5.0
+height = 18.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipebu"]
+atlas = ExtResource("1_qowni")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5awml"]
+atlas = ExtResource("1_qowni")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g5nka"]
+atlas = ExtResource("1_qowni")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxmfr"]
+atlas = ExtResource("1_qowni")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8m1k"]
+atlas = ExtResource("1_qowni")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekqtj"]
+atlas = ExtResource("1_qowni")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68gng"]
+atlas = ExtResource("2_decpc")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tgvf"]
+atlas = ExtResource("2_decpc")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3r0i"]
+atlas = ExtResource("2_decpc")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rhbq"]
+atlas = ExtResource("2_decpc")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yr7o"]
+atlas = ExtResource("2_decpc")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2n6s"]
+atlas = ExtResource("2_decpc")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jth6t"]
+atlas = ExtResource("2_decpc")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2almr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipebu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5awml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g5nka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sxmfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8m1k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekqtj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68gng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tgvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3r0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rhbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yr7o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p2n6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jth6t")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Wizard" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_ww4dv")
+fireBallScene = ExtResource("2_tpg12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_qx8qi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_2almr")
+frame_progress = 0.397073
+
+[node name="Body" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_qx8qi")
+
+[node name="WinDetection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 64
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WinDetection"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_qx8qi")
+
+[node name="HurtDetection" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtDetection"]
+position = Vector2(0, 3)
+shape = SubResource("CapsuleShape2D_qx8qi")
+
+[connection signal="area_entered" from="WinDetection" to="." method="_on_win_detection_area_entered"]
+[connection signal="area_entered" from="HurtDetection" to="." method="_on_hurt_detection_area_entered"]

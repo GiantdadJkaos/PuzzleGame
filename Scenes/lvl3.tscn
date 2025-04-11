@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=3 uid="uid://d32glsks3qlle"]
+
+[ext_resource type="Script" uid="uid://dp7qbgrg3kauf" path="res://Scenes/lvl3.gd" id="1_4qstw"]
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="2_j71pt"]
+[ext_resource type="PackedScene" uid="uid://dppe2yf1xjv6v" path="res://Scenes/Door.tscn" id="3_0gakk"]
+[ext_resource type="PackedScene" uid="uid://chh7jo4bkgtac" path="res://Scenes/Button.tscn" id="4_if662"]
+[ext_resource type="PackedScene" uid="uid://dl4tidd1abphr" path="res://Scenes/trophy.tscn" id="5_ay5o1"]
+[ext_resource type="PackedScene" uid="uid://clj6o3gcieija" path="res://Scenes/Wizard.tscn" id="6_8ngd1"]
+[ext_resource type="PackedScene" uid="uid://dggck1sxhr0n4" path="res://Scenes/lava.tscn" id="7_lrt5m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lktjx"]
+texture = ExtResource("2_j71pt")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cxc5h"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_lktjx")
+
+[node name="World" type="Node"]
+script = ExtResource("1_4qstw")
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = SubResource("TileSet_cxc5h")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 2, 0, 0, 65538, 0, 0, 65537, 0, 0, 65536, 0, 0, 131072, 0, 0, 131073, 0, 0, 131074, 0, 0, -65534, 65536, 0, -65535, 65536, 0, -65536, 65536, 0, -1, 65536, 0, 65535, 65536, 0, 131071, 65536, 0, 196607, 65536, 0, -65533, 65536, 0, 262143, 65536, 0, 196609, 0, 0, 196610, 0, 0, 196608, 0, 0, 327679, 65536, 0, -65532, 65536, 0, -65531, 65536, 0, -65530, 65536, 0, -65529, 65536, 0, -65528, 65536, 0, 8, 65536, 0, 65544, 65536, 0, 131080, 65536, 0, 196616, 65536, 0, 262152, 65536, 0, 7, 0, 0, 131076, 0, 0, 65540, 0, 0, 4, 0, 0, 131077, 65536, 0, 65541, 0, 0, 5, 0, 0, 196613, 0, 0, 196614, 0, 0, 131078, 65536, 0, 131079, 0, 0, 65542, 0, 0, 6, 0, 0, 65543, 0, 0, 196615, 0, 0, 262144, 0, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 262144, 1, 524289, 262144, 1, 524290, 262144, 1, 524291, 262144, 1, 524292, 262144, 1, 524293, 262144, 1, 524294, 0, 0, 524295, 0, 0, 458759, 0, 0, 393223, 262144, 1, 327687, 0, 0, 262151, 262144, 1, 262150, 262144, 1, 262149, 262144, 1, 262148, 262144, 1, 262147, 0, 0, 262146, 0, 0, 262145, 0, 0, 327681, 0, 0, 393217, 0, 0, 458753, 0, 0, 458754, 0, 0, 393218, 0, 0, 327682, 0, 0, 458755, 0, 0, 393219, 0, 0, 327683, 262144, 1, 327684, 0, 0, 327685, 0, 0, 393221, 262144, 1, 458757, 0, 0, 458756, 0, 0, 393220, 262144, 1, 393222, 262144, 1, 458758, 0, 0, 327686, 0, 0, 327688, 65536, 0, 393224, 65536, 0, 458760, 65536, 0, 524296, 65536, 0, 589832, 65536, 0, 3, 262144, 1, 65539, 262144, 1, 131075, 262144, 1, 196611, 0, 0, 589830, 65536, 0, 655368, 65536, 0, 720904, 65536, 0, 786440, 65536, 0, 851976, 65536, 0, 851975, 65536, 0, 851974, 65536, 0, 851973, 65536, 0, 851972, 65536, 0, 851971, 65536, 0, 851970, 65536, 0, 851969, 65536, 0, 851968, 65536, 0, 786432, 65536, 0, 720896, 65536, 0, 655360, 65536, 0, 327678, 65536, 0, 327677, 65536, 0, 327676, 65536, 0, 327675, 65536, 0, 327674, 65536, 0, 327673, 65536, 0, 393209, 65536, 0, 458745, 65536, 0, 524281, 65536, 0, 589817, 65536, 0, 655353, 65536, 0, 655354, 65536, 0, 655355, 65536, 0, 655356, 65536, 0, 655357, 65536, 0, 655358, 65536, 0, 655359, 65536, 0, 589823, 0, 0, 589822, 0, 0, 589821, 0, 0, 589820, 0, 0, 589819, 0, 0, 589818, 0, 0, 524282, 0, 0, 458746, 0, 0, 458747, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 393215, 0, 0, 458751, 0, 0, 458750, 0, 0, 524286, 0, 0, 524285, 0, 0, 524284, 0, 0, 458748, 0, 0, 458749, 0, 0, 524283, 0, 0, 524287, 0, 0, 589824, 0, 0, 589825, 0, 0, 589826, 0, 0, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 655361, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 720903, 0, 0, 786439, 0, 0, 786438, 0, 0, 786437, 0, 0, 786436, 0, 0, 786435, 0, 0, 786434, 0, 0, 720898, 0, 0, 720897, 0, 0, 720899, 0, 0, 720900, 0, 0, 720901, 0, 0, 720902, 0, 0, 786433, 0, 0, 196612, 0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(64, 208)
+offset = Vector2(2.37, 0)
+zoom = Vector2(1.255, 1.255)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="Door2" parent="Doors" instance=ExtResource("3_0gakk")]
+position = Vector2(240, 112)
+
+[node name="Button" parent="Doors/Door2" instance=ExtResource("4_if662")]
+position = Vector2(1, 288)
+collision_layer = 3
+
+[node name="Door3" parent="Doors" instance=ExtResource("3_0gakk")]
+position = Vector2(240, 304)
+
+[node name="Button" parent="Doors/Door3" instance=ExtResource("4_if662")]
+position = Vector2(-416, -128)
+collision_layer = 3
+
+[node name="LavaCollection" type="Node" parent="."]
+
+[node name="Lava" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(240, 176)
+
+[node name="Lava2" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(208, 176)
+
+[node name="Lava3" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(176, 176)
+
+[node name="Lava4" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(144, 80)
+
+[node name="Lava7" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(144, 176)
+
+[node name="Lava8" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(176, 304)
+
+[node name="Lava9" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(144, 304)
+
+[node name="Lava10" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(112, 304)
+
+[node name="Lava11" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(80, 304)
+
+[node name="Lava12" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(48, 304)
+rotation = 1.57079
+
+[node name="Lava13" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(16, 304)
+rotation = 1.57079
+
+[node name="Lava5" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(144, 48)
+
+[node name="Lava6" parent="LavaCollection" instance=ExtResource("7_lrt5m")]
+position = Vector2(144, 16)
+
+[node name="Trophy" parent="." instance=ExtResource("5_ay5o1")]
+position = Vector2(240, 16)
+
+[node name="Wizard" parent="." instance=ExtResource("6_8ngd1")]
+position = Vector2(16, 17)
+
+[connection signal="ButtonOn" from="Doors/Door2/Button" to="Doors/Door2" method="_on_button_button_on"]
+[connection signal="ButtonOn" from="Doors/Door3/Button" to="Doors/Door3" method="_on_button_button_on"]
+[connection signal="hurt" from="Wizard" to="." method="_on_wizard_hurt"]
+[connection signal="win" from="Wizard" to="." method="_on_wizard_win"]

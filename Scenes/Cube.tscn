@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvdik85k5orou"]
+
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="2_pf5ag"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_m2rke"]
+rough = true
+bounce = 0.25
+absorbent = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hpxu"]
+atlas = ExtResource("2_pf5ag")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8ado"]
+size = Vector2(32, 32)
+
+[node name="Cube" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_m2rke")
+gravity_scale = 0.0
+
+[node name="Cube" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_6hpxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_a8ado")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_a8ado")

@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://dppe2yf1xjv6v"]
+
+[ext_resource type="Script" uid="uid://bnmmtjvlp7qww" path="res://Scenes/Door.gd" id="1_47khm"]
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="2_n41le"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gr34"]
+atlas = ExtResource("2_n41le")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bmks"]
+atlas = ExtResource("2_n41le")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvmpd"]
+size = Vector2(32, 32)
+
+[node name="Door" type="Area2D"]
+collision_layer = 0
+collision_mask = 18
+script = ExtResource("1_47khm")
+
+[node name="DoorOn" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_2gr34")
+
+[node name="DoorOff" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = SubResource("AtlasTexture_7bmks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jvmpd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_jvmpd")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

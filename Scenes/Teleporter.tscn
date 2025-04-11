@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b06mhpg32cuor"]
+
+[ext_resource type="Script" uid="uid://s3wkbnrafd05" path="res://Scenes/Teleporter.gd" id="1_4stx4"]
+[ext_resource type="Texture2D" uid="uid://c7u2fimehry8y" path="res://Sprites/factorySpriteMap.png" id="1_qq5fp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyr7v"]
+atlas = ExtResource("1_qq5fp")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_thh23"]
+size = Vector2(32, 32)
+
+[node name="TeleportEnter" type="Area2D"]
+collision_layer = 0
+collision_mask = 18
+monitorable = false
+script = ExtResource("1_4stx4")
+
+[node name="TrophyIcon" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("AtlasTexture_pyr7v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_thh23")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

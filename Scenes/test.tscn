@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddl2sbb4s2hq6"]
+
+[ext_resource type="PackedScene" uid="uid://clj6o3gcieija" path="res://Scenes/Wizard.tscn" id="1_ffuvi"]
+
+[node name="Node" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+drag_horizontal_enabled = true
+
+[node name="Wizard" parent="." instance=ExtResource("1_ffuvi")]
+position = Vector2(16, 17)
